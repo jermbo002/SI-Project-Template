@@ -1,0 +1,49 @@
+﻿/* _css3.scss */
+
+
+/** CSS3 Pie for IE Support
+ -----------------------------*/
+.pie { behavior: url(/css/PIE.htc); }
+
+/** Background Image
+ -----------------------------*/
+@mixin bg-img($from: #fff, $to: #fff) {
+    background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, $from, $to); /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image:    -moz-linear-gradient(top, $from, $to); /* FF3.6 */
+    background-image:     -ms-linear-gradient(top, $from, $to); /* IE10 */
+    background-image:      -o-linear-gradient(top, $from, $to); /* Opera 11.10+ */
+    background-image:         linear-gradient(to bottom, $from, $to);   
+}
+
+/** Border Radius
+ -----------------------------*/
+@mixin border-radius($radius: 2px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+	-o-border-radius: $radius;
+    border-radius: $radius;
+
+	@extend .pie;
+}
+
+/** Box Shadow
+ -----------------------------*/
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow:  $shadow;
+    -moz-box-shadow:  $shadow;
+    -o-box-sahdow: $shadow;
+    box-shadow:  $shadow;
+
+	@extend .pie;
+}
+
+/** Transitions
+ -----------------------------*/
+@mixin transition($el: all, $time: 500ms, $ease: ease) {
+    -webkit-transition: $el $time $ease;
+    -moz-transition: $el $time $ease;
+    -ms-transition: $el $time $ease;
+    -o-transition: $el $time $ease;
+    transition: $el $time $ease;
+}

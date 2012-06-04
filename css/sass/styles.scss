@@ -1,0 +1,103 @@
+﻿/*!
+ * CSS for website
+ * 
+ */
+
+@import "compass";
+@import "partials/normalize";
+
+/** Preferred Styling
+ -------------------------------
+el/class { attributes in alphabetical order }
+ -----------------------------*/
+
+/** SASS variables
+ -----------------------------*/
+$error-color: red;
+
+
+/** SASS Mixins
+ -----------------------------*/
+
+
+
+/* Begin Styles
+ -----------------------------------*/
+/* ** Note: uses box-sizing: border-box -- padding not included in width. (http://paulirish.com/2012/box-sizing-border-box-ftw/) */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; *behavior: url(/css/boxsizing.htc); }
+
+/* Font */
+body { font-family: Sans-Serif; font-size: 1em; text-align: left; line-height: 1.4; }
+select, input, textarea, button { font: 99% sans-serif; }
+
+/* Color */
+body { background: #fff; }
+body, select, input, textarea, button { color: #222; }
+
+/* Selection */
+::-moz-selection{ background: #b3d4fc; color: #fff; }
+::selection{ background: #b3d4fc; color: #fff; }
+
+
+/** Global Styles
+ -----------------------------*/
+.pie { behavior: url(/css/PIE.htc); }
+
+
+/** Headers
+ -----------------------------*/
+
+
+/** Links
+ -----------------------------*/
+a {
+	color: #fff;
+	&:hover { color: #fff; }
+}
+
+
+/** Forms
+ -----------------------------*/
+
+
+/** Validator classes
+ -----------------------------*/
+.error { border: solid 1px $error-color; @include border-radius(1px); @include box-shadow($error-color 0 0 3px); }
+.no-boxshadow .error { background: #f0dddd; }
+.status { font-size: 0.9em; }
+.status-error { color: $error-color; }
+
+
+/** Page wrapper
+ -----------------------------*/
+#page-wrapper { }
+
+
+/** Header
+ -----------------------------*/
+header { }
+
+
+/** Nav 
+ -----------------------------*/
+nav { }
+
+
+/** Content wrapper
+ -----------------------------*/
+#content-wrapper { position: relative; }
+
+
+/** Footer
+ -----------------------------*/
+footer { }
+
+
+/** Mobile Devices
+ -----------------------------*/
+@media only screen and (max-width: 959px) {
+    /* Prevent iOS, WinMobile from adjusting font size */
+    html { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; }
+    
+    .c { float: none; display: block; }
+}

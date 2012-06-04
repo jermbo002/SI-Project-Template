@@ -1,0 +1,43 @@
+﻿/* the humans responsible & colophon */
+/* humanstxt.org */
+ 
+/* TEAM */
+  Developer: Jeremy Burton
+  Site: www.select-interactive.com
+  Twitter: @Sel_Interactive
+  Twitter: @jermbo002
+  Location: Fort Worth, TX
+ 
+/* THANKS */
+  Names (& URL):
+ 
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery
+  Software: MS Visual Studio 2010
+   
+ 
+                                     
+                               -o/-                      
+                               +oo//-                    
+                              :ooo+//:                   
+                             -ooooo///-                  
+                             /oooooo//:                  
+                            :ooooooo+//-                 
+                           -+oooooooo///-                
+           -://////////////+oooooooooo++////////////::   
+            :+ooooooooooooooooooooooooooooooooooooo+:::- 
+              -/+ooooooooooooooooooooooooooooooo+/::////:-
+                -:+oooooooooooooooooooooooooooo/::///////:-
+                  --/+ooooooooooooooooooooo+::://////:-  
+                     -:+ooooooooooooooooo+:://////:--    
+                       /ooooooooooooooooo+//////:-       
+                      -ooooooooooooooooooo////-          
+                      /ooooooooo+oooooooooo//:           
+                     :ooooooo+/::/+oooooooo+//-          
+                    -oooooo/::///////+oooooo///-         
+                    /ooo+::://////:---:/+oooo//:         
+                   -o+/::///////:-      -:/+o+//-        
+                   :-:///////:-            -:/://        
+                     -////:-                 --//:       
+                       
