@@ -2,10 +2,9 @@
 /* humanstxt.org */
  
 /* TEAM */
-  Developer: Jeremy Burton
+  Developer: 
   Site: www.select-interactive.com
   Twitter: @Sel_Interactive
-  Twitter: @jermbo002
   Location: Fort Worth, TX
  
 /* THANKS */
