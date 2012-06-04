@@ -6,7 +6,6 @@
  * Provides a window.log default function to prevent errors in browsers without a console.
  *
  * @author: Jeremy Burton (jeremy@select-interactive.com - www.select-interactive.com)
- * @copyright: 2012 Select Interactive, LLC
  */
 (function( document, $ ) {
     window.app = window.app || {};
@@ -28,7 +27,7 @@
     // if not supported (ie7), load JSON.js
     Modernizr.load({
         test: window.JSON,
-        nope: '/js/JSON.js'
+        nope: '/js/libs/JSON.js'
     });
 })( document, jQuery );
 
