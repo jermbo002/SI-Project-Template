@@ -24,13 +24,13 @@ $error-color: red;
 
 /** SASS Mixins/Functions
  -----------------------------*/
-@function em($target, $context: $font-base) {
+@function em($target, $context: $base-font-size) {
 	@return $target / $context + 0em;
 }
-@function perc($width, $container-width: $max-width) {
+@function perc($width, $container-width: $max-width-px) {
    @return percentage($width / $container-width);
 }
-@function lh($amount: 1, $context: $font-base) {
+@function lh($amount: 1, $context: $base-font-size) {
    @return em($font-base-line-height * $amount, $context);
 }
 
