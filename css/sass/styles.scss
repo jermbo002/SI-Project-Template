@@ -13,12 +13,26 @@ el/class { attributes in alphabetical order }
 
 /** SASS variables
  -----------------------------*/
+/* Dimensions + Fonts */
+$base-font-size: 16px;
+$base-line-height: 24px;
+$max-width-px: 960px;
+
+/* Colors */
 $error-color: red;
 
 
-/** SASS Mixins
+/** SASS Mixins/Functions
  -----------------------------*/
-
+@function em($target, $context: $font-base) {
+	@return $target / $context + 0em;
+}
+@function perc($width, $container-width: $max-width) {
+   @return percentage($width / $container-width);
+}
+@function lh($amount: 1, $context: $font-base) {
+   @return em($font-base-line-height * $amount, $context);
+}
 
 
 /* Begin Styles
@@ -27,7 +41,7 @@ $error-color: red;
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; *behavior: url(/css/boxsizing.htc); }
 
 /* Font */
-body { font-family: Sans-Serif; font-size: 1em; text-align: left; line-height: 1.4; }
+body { font-family: Sans-Serif; font-size: $base-font-size; text-align: left; line-height: $base-line-height; }
 select, input, textarea, button { font: 99% sans-serif; }
 
 /* Color */
