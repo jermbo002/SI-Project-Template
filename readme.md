@@ -1,4 +1,4 @@
-﻿# [Select Interactive Project Boilerplate](www.select-interactive.com)
+﻿# [Select Interactive Project Boilerplate](http://www.select-interactive.com)
 
 The Select Interactive (SI) Project Boilerplate is the starting blueprint for all SI websites and web apps.
 
