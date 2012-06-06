@@ -1,16 +1,16 @@
-﻿/* the humans responsible & colophon */
-/* humanstxt.org */
+﻿# the humans responsible & colophon
+# humanstxt.org
  
-/* TEAM */
-  Developer: 
+# TEAM
+  Developer:
   Site: www.select-interactive.com
   Twitter: @Sel_Interactive
   Location: Fort Worth, TX
  
-/* THANKS */
-  Names (& URL):
+# THANKS
+  <name>
  
-/* SITE */
+# SITE
   Standards: HTML5, CSS3
   Components: Modernizr, jQuery
   Software: MS Visual Studio 2010
