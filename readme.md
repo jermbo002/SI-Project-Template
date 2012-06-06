@@ -5,7 +5,7 @@ The Select Interactive (SI) Project Boilerplate is the starting blueprint for al
 Built upon the initial work of [HTML5Boilerplate](http://html5boilerplate.com), the SI Project Boilerplate has been edited and configured for IIS7 and ASP.NET 4.0.
 
 ## Author
-The SI Project Boilerplate is managed by SI partner [Jeremy Burton](mailto:jeremy@select-interactive.com).
+The SI Project Boilerplate is managed by SI partner, [Jeremy Burton](mailto:jeremy@select-interactive.com).
 
 ## License
 
