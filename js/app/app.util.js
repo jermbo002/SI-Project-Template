@@ -32,16 +32,42 @@
 })( document, jQuery );
 
 // Set a defualt window.log function to prevent error in browsers without a console - IE.
-window.log = function(){
+window.log = function f() {
     log.history = log.history || [];
-    log.history.push( arguments );
-    if ( this.console ) {
-        arguments.callee = arguments.callee.caller;
-        var newarr = [].slice.call( arguments );
-        ( typeof console.log === 'object' ? log.apply.call( console.log, console, newarr ) : console.log.apply( console, newarr ) );
+    log.history.push(arguments);
+    if (this.console) {
+        var args = arguments;
+        var newarr;
+
+        try {
+            args.callee = f.caller;
+        } catch(e) {
+
+        }
+
+        newarr = [].slice.call(args);
+
+        if (typeof console.log === 'object') {
+            log.apply.call(console.log, console, newarr);
+        } else {
+            console.log.apply(console, newarr);
+        }
     }
 };
 
 // make it safe to use console.log always
-(function(b){function c(){}for(var d="assert,clear,count,debug,dir,dirxml,error,exception,firebug,group,groupCollapsed,groupEnd,info,log,memoryProfile,memoryProfileEnd,profile,profileEnd,table,time,timeEnd,timeStamp,trace,warn".split(","),a;a=d.pop();){b[a]=b[a]||c}})((function(){try
-{console.log();return window.console;}catch(err){return window.console={};}})());
+(function(a) {
+    function b() {}
+    var c = "assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn";
+    var d;
+    for (c = c.split(","); !!(d = c.pop());) {
+        a[d] = a[d] || b;
+    }
+})(function() {
+    try {
+        console.log();
+        return window.console;
+    } catch(a) {
+        return (window.console = {});
+    }
+}());
