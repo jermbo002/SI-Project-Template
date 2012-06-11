@@ -10,9 +10,10 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="author" href="/humans.txt">    <!--<link rel="shortcut icon" href="/favicon.ico">    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/m/h/apple-touch-icon.png">    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/m/m/apple-touch-icon.png">
+    <link rel="author" href="/humans.txt">        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/m/h/apple-touch-icon.png">    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/m/m/apple-touch-icon.png">
 	<link rel="apple-touch-icon-precomposed" href="/img/m/l/apple-touch-icon.png">    <link rel="shortcut icon" href="/img/m/l/apple-touch-icon.png">
-    <meta http-equiv="cleartype" content="on">-->
+    <meta http-equiv="cleartype" content="on">
+    
     <link rel="Stylesheet" href="/css/styles.v-1.0.css">
     <script src="/js/libs/modernizr-2.5.3.min.js"></script>
 </head>
