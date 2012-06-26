@@ -10,16 +10,19 @@
 (function( document, $ ) {
     window.app = window.app || {};
 
-    app.ajax = function( wsUrl, wsData, callSuccess, callFailure ) {
+    app.ajax = function( wsUrl, wsData, callSuccess, callFailure, async ) {
+        !async && ( async = true );
+
         return $.ajax({
-            type: 'POST',
+            async: async,
             cache: false,
-            url: wsUrl,
-            data: wsData,
             contentType: 'application/json; charset=utf-8',
-            dataType: 'json',
+            data: wsData,
+            error: callFailure,
             success: callSuccess,
-            error: callFailure
+            dataType: 'json',
+            type: 'POST',
+            url: wsUrl
         });
     };
 
