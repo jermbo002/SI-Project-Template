@@ -11,7 +11,7 @@
     window.app = window.app || {};
 
     app.ajax = function( wsUrl, wsData, callSuccess, callFailure, async ) {
-        !async && ( async = true );
+        async = async || true;
 
         return $.ajax({
             async: async,
