@@ -32,7 +32,7 @@
         test: window.JSON,
         nope: '/js/libs/JSON.js'
     });
-})( document, jQuery );
+}( document, jQuery ) );
 
 // Set a defualt window.log function to prevent error in browsers without a console - IE.
 window.log = function f() {
