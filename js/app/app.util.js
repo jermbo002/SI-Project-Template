@@ -34,43 +34,15 @@
     });
 }( document, jQuery ) );
 
-// Set a defualt window.log function to prevent error in browsers without a console - IE.
-window.log = function f() {
-    log.history = log.history || [];
-    log.history.push(arguments);
-    if (this.console) {
-        var args = arguments;
-        var newarr;
-
-        try {
-            args.callee = f.caller;
-        } catch(e) {
-
+// Avoid 'console' errors in browsers that lack a console
+if ( !( window.console && console.log ) ) {
+    (function() {
+        var noop = function() {},
+            methods = ['assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error', 'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log', 'markTimeline', 'profile', 'profileEnd', 'markTimeline', 'table', 'time', 'timeEnd', 'timeStamp', 'trace', 'warn'],
+            length = methods.length,
+            console = window.console = {};
+        while ( length-- ) {
+            console[methods[length]] = noop;
         }
-
-        newarr = [].slice.call(args);
-
-        if (typeof console.log === 'object') {
-            log.apply.call(console.log, console, newarr);
-        } else {
-            console.log.apply(console, newarr);
-        }
-    }
-};
-
-// make it safe to use console.log always
-(function(a) {
-    function b() {}
-    var c = "assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn";
-    var d;
-    for (c = c.split(","); !!(d = c.pop());) {
-        a[d] = a[d] || b;
-    }
-})(function() {
-    try {
-        console.log();
-        return window.console;
-    } catch(a) {
-        return (window.console = {});
-    }
-}());
+    }());
+}
