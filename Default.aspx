@@ -17,7 +17,7 @@
     <meta http-equiv="cleartype" content="on">
     --%>
     <link rel="Stylesheet" href="/css/styles.v-1.0.css">
-    <script src="/js/libs/modernizr-2.6.0.min.js"></script>
+    <script src="/js/libs/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
     <!-- Prompt IE 6 users to install Chrome Frame. -->
