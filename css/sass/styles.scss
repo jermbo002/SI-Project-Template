@@ -1,85 +1,48 @@
 ﻿/*!
  * CSS for website
- * 
+ *
+ * @author: [name] [(email/web site)]
  */
 
+// SASS Imports
 @import "compass";
 @import "partials/normalize";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/layout";
+@import "partials/forms";
+@import "partials/buttons";
+@import "partials/type";
+
 
 /** Preferred Styling
  -------------------------------
 el/class { attributes in alphabetical order }
  -----------------------------*/
 
-/** SASS variables
- -----------------------------*/
-/* Dimensions + Fonts */
-$base-font-size: 16px;
-$base-line-height: 24px;
-$max-width-px: 960px;
-
-/* Colors */
-$error-color: red;
-
-
-/** SASS Mixins/Functions
- -----------------------------*/
-@function em($target, $context: $base-font-size) {
-	@return $target / $context + 0em;
-}
-@function perc($width, $container-width: $max-width-px) {
-   @return percentage($width / $container-width);
-}
-@function lh($amount: 1, $context: $base-font-size) {
-   @return em($font-base-line-height * $amount, $context);
-}
-
-
-/* Begin Styles
- -----------------------------------*/
-/* ** Note: uses box-sizing: border-box -- padding not included in width. (http://paulirish.com/2012/box-sizing-border-box-ftw/) */
-* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; *behavior: url(/css/boxsizing.htc); }
-
-/* Font */
-body { font-family: Sans-Serif; font-size: $base-font-size; text-align: left; line-height: $base-line-height; }
-select, input, textarea, button { font: 99% sans-serif; }
-
-/* Color */
-body { background: #fff; }
-body, select, input, textarea, button { color: #222; }
-
-/* Selection */
-::-moz-selection{ background: #b3d4fc; color: #fff; }
-::selection{ background: #b3d4fc; color: #fff; }
-
 
 /** Global Styles
  -----------------------------*/
+// Font
+body { font-family: Sans-Serif; font-size: $base-font-size; text-align: left; line-height: $base-line-height; }
+
+// Color
+body { background: $body-background; color: $body-color; }
+
+// Selection
+::-moz-selection{ background: #b3d4fc; color: #fff; }
+::selection{ background: #b3d4fc; color: #fff; }
+
+// Helper Classes
 .pie { behavior: url(/css/PIE.htc); }
-
-
-/** Headers
- -----------------------------*/
 
 
 /** Links
  -----------------------------*/
 a {
-	color: #fff;
-	&:hover { color: #fff; }
+	color: $link-color;
+	&:hover { color: $link-color-hover; }
 }
-
-
-/** Forms
- -----------------------------*/
-
-
-/** Validator classes
- -----------------------------*/
-.error { border: solid 1px $error-color; @include border-radius(1px); @include box-shadow($error-color 0 0 3px); }
-.no-boxshadow .error { background: #f0dddd; }
-.status { font-size: 0.9em; }
-.status-error { color: $error-color; }
 
 
 /** Page wrapper

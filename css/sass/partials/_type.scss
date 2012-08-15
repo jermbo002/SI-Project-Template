@@ -1,0 +1,50 @@
+﻿/**
+ * Type styles
+ * Headings, body text, lists, code, and more for a versatile and durable typography system
+ */
+
+/** Headers
+ -----------------------------*/
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	text-rendering: optimizelegibility; // Fix the character spacing for headings
+
+	small {
+		font-weight: normal;
+	}
+}
+
+/** Body Text
+ -----------------------------*/
+p {
+	margin: 0 0 $base-line-height / 2;
+	
+	small {
+		color: $light-gray;
+		font-size: $base-font-size - 2;
+	}
+}
+.lead {
+	font-size: 20px;
+	font-weight: 200;
+	line-height: $base-line-height * 1.5;
+	margin-bottom: $base-line-height;
+}
+
+
+/** Lists
+ -----------------------------*/
+// Unordered and Ordered lists
+ul, ol {
+	padding: 0;
+	margin: 0 0 ($base-line-height / 2) 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+	margin-bottom: 0;
+}
+li {
+	line-height: $base-line-height;
+}

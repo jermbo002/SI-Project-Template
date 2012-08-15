@@ -1,0 +1,206 @@
+﻿/**
+ * Project Form Styles
+ */
+
+/** Forms
+ -----------------------------*/
+.form {
+	// Make all forms have space below them
+	margin: 0 0 $base-line-height;
+
+	fieldset {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+	legend {	
+		border: 0;
+		border-bottom: 1px solid #e5e5e5;
+		color: $dark-gray;
+		display: block;
+		font-size: $base-font-size * 1.5;
+		margin-bottom: $base-line-height * 1.5;
+		padding: 0;
+		width: 100%;
+
+		small {	
+			color: $light-gray;
+			font-size: $base-line-height * .75;
+		}
+	}
+
+	// Inline forms -- by default
+	label {
+		display: inline-block;
+		margin-right: $label-margin-right;
+		width: $label-width;
+	}	
+
+	// Block Forms -- label on top of input
+	&.block {
+		label {
+			display: block;
+			margin: 0 0 5px;
+		}
+	}
+
+	// Form elements reset
+	select,
+	textarea,
+	input[type="text"],
+	input[type="password"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="search"],
+	input[type="tel"],
+	.uneditable-input {
+		color: $body-color;
+		display: inline-block;
+		height: $base-line-height;
+		line-height: $base-line-height;
+		margin-bottom: 9px;
+		padding: 4px;
+
+		// Disabled State
+		&:disabled,
+		&:readonly {
+			background-color: $input-disabled-bg;
+			border-color: $input-disabled-border;
+			cursor: not-allowed;
+		}
+
+		// Form feedback states
+		// invalid
+		&.invalid {
+			border-color: $error-border;
+		}
+	}
+
+	// input and textarea widths
+	input,
+	textarea {
+		width: $input-width;
+	}
+	
+	// General quick sizing of inputs
+	.input-mini       { width: 60px; }
+	.input-small      { width: 90px; }
+	.input-medium     { width: 150px; }
+	.input-large      { width: 210px; }
+	.input-xlarge     { width: 270px; }
+	.input-xxlarge    { width: 530px; }
+	
+	// reset height of textarea because they have rows
+	textarea {
+		width: auto;
+	}
+
+	// Form elemen styles
+	textarea,
+	input[type="text"],
+	input[type="password"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="search"],
+	input[type="tel"],
+	.uneditable-input {
+		background-color: $input-bg;
+		border: 1px solid $input-border;
+		@include border-radius($input-border-radius);
+		@include box-shadow($input-box-shadow);
+		@include transition($input-transition);
+
+		// Focus State
+		&:focus {
+			border-color: $input-border-focus;
+			@include box-shadow($input-box-shadow-focus);
+			outline: 0;
+			outline: thin dotted \9; /* IE6-9 */
+		}
+	}
+
+	// Position Radio and Checkboxes Better
+	input[type="radio"],
+	input[type="checkbox"] {
+		cursor: pointer;
+		line-height: normal;
+		margin: 3px 0;
+		*margin-top: 0; /* IE7 */
+	}
+	
+	// Reset width of input buttons, radios, checkboxes
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	input[type="radio"],
+	input[type="checkbox"] {
+		width: auto; // Override of generic input selector
+	}
+
+	// Make uneditable textareas behave like a textarea
+	.uneditable-textarea {
+		height: auto;
+		width: auto;
+	}
+
+	// Set the height of select and file controls to match text inputs
+	select,
+	input[type="file"] {
+		height: 28px; /* In IE7, the height of the select element cannot be changed by height, only font-size */
+		line-height: 28px;
+		*margin-top: 4px; /* For IE7, add top margin to align select with labels */
+	}
+
+	// Make select elements obey height by applying a border
+	select {
+		border: 1px solid $input-border;
+		width: $input-width + 10; /* default input width + 10px of padding that doesn't get applied */
+	}
+
+	// Search input
+	input[type="search"],
+	input.search {
+		@include border-radius(14px);
+		margin-bottom: 0;
+		padding-right: 14px;
+		padding-right: 4px \9;
+		padding-left: 14px;
+		padding-left: 4px \9;
+	}
+}
+
+
+/** Status
+ -----------------------------*/
+.status {
+	border: 1px solid transparent;
+	font-size: .9em;
+	padding: 5px;
+
+	&.error {
+		background: $error-bg;
+		border-coor: $error-border;
+		color: $error-text;
+	}
+
+	&.info {
+		background: $info-bg;
+		border-coor: $info-border;
+		color: $info-text;
+	}
+
+	&.success {
+		background: $success-bg;
+		border-coor: success-border;
+		color: $success-text;
+	}
+
+	&.warning {
+		background: $warning-bg;
+		border-coor: $warning-border;
+		color: $warning-text;
+	}
+}

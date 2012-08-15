@@ -1,0 +1,15 @@
+﻿/**
+ * Project SASS Mixins
+ */
+@function em($target, $context: $base-font-size) {
+	@return $target / $context + 0em;
+}
+@function perc($width, $container-width: $max-width-px) {
+   @return percentage($width / $container-width);
+}
+@function lh($amount: 1, $context: $base-font-size) {
+   @return em($base-line-height * $amount, $context);
+}
+@mixin bg-img($start: $white, $end: $gray-lighter) {
+	@include background-image(linear-gradient($start, $end));
+}	
