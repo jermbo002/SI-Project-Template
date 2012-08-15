@@ -7,17 +7,20 @@
 button,
 .btn {
 	@include bg-img($btn-bg, $btn-bg-accent);
+	background-size: 160%;
 	border: 1px solid $btn-border;
 	*border: 0;				// Remove the border to prevent IE7's black border on input:focus
 	border-bottom-color: darken($btn-border, 10%);
 	@include border-radius($btn-border-radius);
 	@include box-shadow($btn-box-shadow);
 	color: $dark-gray;
+	cursor: pointer;
 	display: inline-block;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
 	*line-height: 20px;
 	margin-bottom: 0;		// For input.btn
+	padding: 4px 10px 4px;
 	text-align: center;
 	text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
 	vertical-align: middle;
