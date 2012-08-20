@@ -87,9 +87,12 @@ module.exports = function( grunt ) {
         }
     });
     
-    // Default task.
-    grunt.registerTask( 'default', 'lint compass:prod img:allImgs' );
+    // Default task -- watch
+    grunt.registerTask( 'default', 'watch' );
 
+    // Build task -- optimze for production
+    grunt.registerTask( 'build', 'lint compass:prod img:allImgs' );
+    
     // Compass plugin task
     grunt.loadNpmTasks( 'grunt-compass' );
 
