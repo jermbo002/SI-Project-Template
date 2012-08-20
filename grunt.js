@@ -37,6 +37,13 @@ module.exports = function( grunt ) {
             }
         },
 
+        // optiize images
+        img: {
+            allImgs: {
+                src: 'img'
+            }
+        },
+
         // jhHint - set options
         jshint: {
             options: {
@@ -81,8 +88,11 @@ module.exports = function( grunt ) {
     });
     
     // Default task.
-    grunt.registerTask( 'default', 'lint compass:prod' );
+    grunt.registerTask( 'default', 'lint compass:prod img:allImgs' );
 
     // Compass plugin task
     grunt.loadNpmTasks( 'grunt-compass' );
+
+    // Image optimization task
+    grunt.loadNpmTasks( 'grunt-img' );
 };
