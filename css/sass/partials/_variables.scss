@@ -78,10 +78,12 @@ $btn-inverse-bg-accent:     $darker-gray;
 
 /** Forms
  -----------------------------*/
+$row-margin:				10px;
 $label-width:				100px;
 $label-margin-right:		5px;
 $input-bg:					$white;
 $input-width:				210px;
+$input-height:				auto;
 $input-border:				#ccc;
 $input-border-focus:		rgba(82, 168, 236, .8);
 $input-border-radius:		3px;

@@ -30,6 +30,12 @@
 		}
 	}
 
+	// Separating rows
+	.r {
+		margin: 0 0 $row-margin;
+		padding: 0;
+	}
+
 	// Inline forms -- by default
 	label {
 		display: inline-block;
@@ -58,9 +64,8 @@
 	.uneditable-input {
 		color: $body-color;
 		display: inline-block;
-		height: $base-line-height;
+		height: $input-height;
 		line-height: $base-line-height;
-		margin-bottom: 9px;
 		padding: 4px;
 
 		// Disabled State
@@ -97,7 +102,7 @@
 		width: auto;
 	}
 
-	// Form elemen styles
+	// Form element styles
 	textarea,
 	input[type="text"],
 	input[type="password"],
@@ -182,25 +187,25 @@
 
 	&.error {
 		background: $error-bg;
-		border-coor: $error-border;
+		border-color: $error-border;
 		color: $error-text;
 	}
 
 	&.info {
 		background: $info-bg;
-		border-coor: $info-border;
+		border-color: $info-border;
 		color: $info-text;
 	}
 
 	&.success {
 		background: $success-bg;
-		border-coor: success-border;
+		border-color: success-border;
 		color: $success-text;
 	}
 
 	&.warning {
 		background: $warning-bg;
-		border-coor: $warning-border;
+		border-color: $warning-border;
 		color: $warning-text;
 	}
 }
