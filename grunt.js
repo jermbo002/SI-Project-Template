@@ -19,6 +19,17 @@ module.exports = function( grunt ) {
                 "url"   : "www.select-interactive.com"
             }
         },
+
+        // compile and min javascript to build folder
+        'closure-compiler': {
+            frontend: {
+                js: ['js/<%= pkg.appDir %>/*.js'],
+                outputPath: 'js/<%= pkg.appDir %>/build/',
+                options: {
+                    compilation_level: 'ADVANCED_OPTIMIZATIONS'
+                }
+            }
+        },
         
         // compile .scss/.sass to .css using Compass
         compass: {
@@ -91,7 +102,11 @@ module.exports = function( grunt ) {
     grunt.registerTask( 'default', 'watch' );
 
     // Build task -- optimze for production
-    grunt.registerTask( 'build', 'lint compass:prod img:allImgs' );
+    // leave closure compiler on end -- it is stopping other tasks from running if before
+    grunt.registerTask( 'build', 'lint compass:prod img:allImgs closure-compiler' );
+    
+    // Closure Compiler task
+    grunt.loadNpmTasks( 'grunt-closure-compiler' );
     
     // Compass plugin task
     grunt.loadNpmTasks( 'grunt-compass' );
