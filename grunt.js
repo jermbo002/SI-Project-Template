@@ -48,6 +48,15 @@ module.exports = function( grunt ) {
             }
         },
 
+        // after copmass has been compiled into css/styles.css for production
+        // update css/styles.min.css to the newly compiled css
+        concat: {
+            cssProd: {
+                src: ['css/styles.css'],
+                dest: 'css/styles.min.css'
+            }
+        },
+
         // optiize images
         img: {
             allImgs: {
@@ -103,7 +112,7 @@ module.exports = function( grunt ) {
 
     // Build task -- optimze for production
     // leave closure compiler on end -- it is stopping other tasks from running if before
-    grunt.registerTask( 'build', 'lint compass:prod img:allImgs closure-compiler' );
+    grunt.registerTask( 'build', 'lint compass:prod concat:cssProd img:allImgs closure-compiler' );
     
     // Closure Compiler task
     grunt.loadNpmTasks( 'grunt-closure-compiler' );
