@@ -1,5 +1,5 @@
 ﻿/*!
- * app.util.js
+ * util.js
  *
  * A utility file that provides helper methods for error mesages, ajax calls, logging, etc...
  * Ajax function has been updated to return the jXHR object available in jQuery 1.5
@@ -8,13 +8,15 @@
  * @author: Jeremy Burton (jeremy@select-interactive.com - www.select-interactive.com)
  */
 (function( document, $ ) {
-    window.app = window.app || {};
+    var app = window.app = window.app || {},    
+        Modernizr = window.Modernizr || {};
 
-    app.ajax = function( wsUrl, wsData, callSuccess, callFailure, async ) {
-        async = async === undefined ? true : async;
+    app.ajax = function( wsUrl, wsData, callSuccess, callFailure ) {
+        if ( typeof wsData !== 'string' ) {
+            wsData = JSON.stringify( wsData );
+        }
 
         return $.ajax({
-            async: async,
             cache: false,
             contentType: 'application/json; charset=utf-8',
             data: wsData,
