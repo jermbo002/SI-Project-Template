@@ -48,7 +48,7 @@ module.exports = function( grunt ) {
             }
         },
 
-        // after copmass has been compiled into css/styles.css for production
+        // after compass has been compiled into css/styles.css for production
         // update css/styles.min.css to the newly compiled css
         concat: {
             cssProd: {
@@ -81,7 +81,8 @@ module.exports = function( grunt ) {
                 devel: true
             },
             globals: {
-                jQuery: true
+                jQuery: true,
+                Modernizr: true
             }
         },
 
