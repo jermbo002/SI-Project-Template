@@ -17,7 +17,8 @@ module.exports = function( grunt ) {
                 "name"  : "Jeremy Burton",
                 "email" : "jeremy@select-interactive.com",
                 "url"   : "www.select-interactive.com"
-            }
+            },
+            "version": "0.1.0"
         },
 
         // compile and min javascript to build folder
