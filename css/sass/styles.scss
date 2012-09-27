@@ -13,6 +13,9 @@
 @import "partials/forms";
 @import "partials/buttons";
 @import "partials/type";
+@import "partials/helpers";
+@import "partials/header";
+@import "partials/footer";
 
 
 /** Preferred Styling
@@ -23,11 +26,21 @@ el/class { attributes in alphabetical order }
 
 /** Global Styles
  -----------------------------*/
-// Font
-body { font-family: Sans-Serif; font-size: $base-font-size; text-align: left; line-height: $base-line-height; }
+// Always show vertical scroll bar in window
+html { overflow-y: scroll; } 
 
-// Color
-body { background: $body-background; color: $body-color; }
+// Global body styles
+body {
+	// Font
+	font-family: Sans-Serif; 
+	font-size: $base-font-size; 
+	line-height: $base-line-height;
+	text-align: left;
+
+	// Color
+	background: $body-background; 
+	color: $body-color;
+}
 
 // Selection
 ::-moz-selection{ background: #b3d4fc; color: #fff; }
@@ -35,14 +48,9 @@ body { background: $body-background; color: $body-color; }
 
 // Helper Classes
 .pie { behavior: url(/css/PIE.htc); }
-
-
-/** Links
- -----------------------------*/
-a {
-	color: $link-color;
-	&:hover { color: $link-color-hover; }
-}
+.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
 
 
 /** Page wrapper
@@ -50,24 +58,9 @@ a {
 #page-wrapper { }
 
 
-/** Header
- -----------------------------*/
-header { }
-
-
-/** Nav 
- -----------------------------*/
-nav { }
-
-
 /** Content wrapper
  -----------------------------*/
 #content-wrapper { position: relative; }
-
-
-/** Footer
- -----------------------------*/
-footer { }
 
 
 /** Mobile Devices
@@ -75,6 +68,4 @@ footer { }
 @media only screen and (max-width: 959px) {
     /* Prevent iOS, WinMobile from adjusting font size */
     html { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; }
-    
-    .c { float: none; display: block; }
 }

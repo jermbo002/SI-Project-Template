@@ -23,11 +23,6 @@
 		margin-bottom: $base-line-height * 1.5;
 		padding: 0;
 		width: 100%;
-
-		small {	
-			color: $light-gray;
-			font-size: $base-line-height * .75;
-		}
 	}
 
 	// Separating rows
@@ -41,6 +36,22 @@
 		display: inline-block;
 		margin-right: $label-margin-right;
 		width: $label-width;
+		
+		// labels for checkboxes and radio buttons
+		&.cb {
+			cursor: pointer;
+			display: inline-block !important;
+			margin-left: 4px !important;
+			vertical-align: middle;
+			width: auto;
+		}
+
+		// info blocks in labels
+		span {
+			color: lighten($body-color, 10%);
+			font-size: .9em;
+			font-style: italic;
+		}
 	}	
 
 	// Block Forms -- label on top of input
@@ -89,6 +100,50 @@
 		width: $input-width;
 	}
 	
+	// Full Width Forms
+	&.full-width {
+		label {
+			display: block;
+			margin: 0 0 2px;
+			width: auto;
+		}
+
+		textarea,
+		input[type="text"],
+		input[type="password"],
+		input[type="number"],
+		input[type="email"],
+		input[type="url"],
+		input[type="search"],
+		input[type="tel"] {
+			width: 99%;
+		}
+	}
+
+	// prefixes
+	input[type="text"],
+	input[type="password"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="search"],
+	input[type="tel"] {
+		&.prefix {
+			@include border-top-left-radius(0);
+			@include border-bottom-left-radius(0);
+		}
+	}
+	span.prefix {
+		background: #f1f1f1;
+		border: 1px solid $input-border;
+		border-right: 0;
+		@include border-top-left-radius($input-border-radius);
+		@include border-bottom-left-radius($input-border-radius);
+		display: inline-block;
+		padding: 3px 5px 5px;
+		text-shadow: 0 1px 0 #fff;
+	}
+
 	// General quick sizing of inputs
 	.input-mini       { width: 60px; }
 	.input-small      { width: 90px; }
@@ -100,6 +155,7 @@
 	// reset height of textarea because they have rows
 	textarea {
 		width: auto;
+		resize: none;
 	}
 
 	// Form element styles
@@ -133,7 +189,7 @@
 		cursor: pointer;
 		line-height: normal;
 		margin: 3px 0;
-		*margin-top: 0; /* IE7 */
+		vertical-align: middle;
 	}
 	
 	// Reset width of input buttons, radios, checkboxes
@@ -154,9 +210,7 @@
 	// Set the height of select and file controls to match text inputs
 	select,
 	input[type="file"] {
-		height: 28px; /* In IE7, the height of the select element cannot be changed by height, only font-size */
 		line-height: 28px;
-		*margin-top: 4px; /* For IE7, add top margin to align select with labels */
 	}
 
 	// Make select elements obey height by applying a border
@@ -181,31 +235,33 @@
 /** Status
  -----------------------------*/
 .status {
-	border: 1px solid transparent;
-	font-size: .9em;
-	padding: 5px;
+	p {
+		border: 1px solid transparent;
+		font-size: .9em;
+		padding: 5px;
 
-	&.error {
-		background: $error-bg;
-		border-color: $error-border;
-		color: $error-text;
-	}
+		&.error {
+			background: $error-bg;
+			border-color: $error-border;
+			color: $error-text;
+		}
 
-	&.info {
-		background: $info-bg;
-		border-color: $info-border;
-		color: $info-text;
-	}
+		&.info {
+			background: $info-bg;
+			border-color: $info-border;
+			color: $info-text;
+		}
 
-	&.success {
-		background: $success-bg;
-		border-color: success-border;
-		color: $success-text;
-	}
+		&.success {
+			background: $success-bg;
+			border-color: success-border;
+			color: $success-text;
+		}
 
-	&.warning {
-		background: $warning-bg;
-		border-color: $warning-border;
-		color: $warning-text;
+		&.warning {
+			background: $warning-bg;
+			border-color: $warning-border;
+			color: $warning-text;
+		}
 	}
 }

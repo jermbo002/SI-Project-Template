@@ -8,9 +8,8 @@
 * { @include box-sizing(border-box); *behavior: url(/css/boxsizing.htc); }
 
 
-/** Rows/Columns/Clearfix
- -----------------------------*/
-.clearfix:before,.r:before,.clearfix:after,.r:after{content: "";display: table;}.clearfix:after,.r:after{clear:both;}.clearfix,.r{*zoom:1;}
+//  Rows/Columns/Clearfix
+.clearfix:before,.row:before,.clearfix:after,.row:after{content: "";display: table;}.clearfix:after,.row:after{clear:both;}.clearfix,.row{*zoom:1;}
 
 // Row class
 .r { 

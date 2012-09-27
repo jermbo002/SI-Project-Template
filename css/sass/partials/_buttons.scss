@@ -4,12 +4,10 @@
 
 /** Button Defaults
  -----------------------------*/
-button,
-.btn {
+button {
 	@include bg-img($btn-bg, $btn-bg-accent);
 	background-size: 160%;
 	border: 1px solid $btn-border;
-	*border: 0;				// Remove the border to prevent IE7's black border on input:focus
 	border-bottom-color: darken($btn-border, 10%);
 	@include border-radius($btn-border-radius);
 	@include box-shadow($btn-box-shadow);
@@ -19,7 +17,6 @@ button,
 	font-size: $base-font-size;
 	line-height: $base-line-height;
 	*line-height: 20px;
-	margin-bottom: 0;		// For input.btn
 	padding: 4px 10px 4px;
 	text-align: center;
 	text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
@@ -117,56 +114,32 @@ button,
 
 	// Backgrounds
 	&.btn-primary {
+		background-color: $btn-primary-bg;
 		@include bg-img($btn-primary-bg, $btn-primary-bg-accent);
 	}
 	// Warning appears are orange
 	&.btn-warning {
+		background-color: $btn-warning-bg;
 		@include bg-img($btn-warning-bg, $btn-warning-bg-accent);
 	}
 	// Danger and error appear as red
 	&.btn-danger {
+		background-color: $btn-danger-bg;
 		@include bg-img($btn-danger-bg, $btn-danger-bg-accent);
 	}
 	// Success appears as green
 	&.btn-success {
+		background-color: $btn-success-bg;
 		@include bg-img($btn-success-bg, $btn-success-bg-accent);
 	}
 	// Info appears as a neutral blue
 	&.btn-info {
+		background-color: $btn-info-bg;
 		@include bg-img($btn-info-bg, $btn-info-bg-accent);
 	}
 	// Inverse appears as dark gray
 	&.btn-inverse {
+		background-color: $btn-inverse-bg;
 		@include bg-img($btn-inverse-bg, $btn-inverse-bg-accent);
-	}
-
-}
-
-
-/** Cross-browser Jank
- -----------------------------*/
-button.btn,
-input[type="submit"].btn {
-
-	// Firefox 3.6 only I believe
-	&::-moz-focus-inner {
-		padding: 0;
-		border: 0;
-	}
-
-	// IE7 has some default padding on button controls
-	*padding-top: 2px;
-	*padding-bottom: 2px;
-	&.btn-large {
-		*padding-top: 7px;
-		*padding-bottom: 7px;
-	}
-	&.btn-small {
-		*padding-top: 3px;
-		*padding-bottom: 3px;
-	}
-	&.btn-mini {
-		*padding-top: 1px;
-		*padding-bottom: 1px;
 	}
 }
