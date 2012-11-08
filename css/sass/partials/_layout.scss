@@ -8,16 +8,45 @@
 * { @include box-sizing(border-box); *behavior: url(/css/boxsizing.htc); }
 
 
+// Media Queries
+@mixin mediaquery($point) {
+	@if $point == desktop {
+		@media (min-width: 1024px) { @content; }
+	}
+	@if $point == largeScreen {
+		@media (min-width: 768px) { @content; }
+	}
+	@if $point == tablet {
+		@media (min-width: 768px) and (max-width: 1023px) { @content; }
+	}
+	@if $point == mobile {
+		@media (max-width: 1023px) { @content; }
+	}
+	@if $point == phone {
+		@media (max-width: 767px) { @content; }
+	}
+	@if $point == phone-portrait {
+		@media (max-width: 767px) and (orientation: portrait) { @content; }
+	}
+}
+
+
 //  Rows/Columns/Clearfix
 .clearfix:before,.row:before,.clearfix:after,.row:after{content: "";display: table;}.clearfix:after,.row:after{clear:both;}.clearfix,.row{*zoom:1;}
 
 // Row class
-.r { 
+.row { 
 	margin: 0 0 $grid-padding 0;
 	padding: $grid-padding 0;
 
 	&.no-marg { margin: 0; }
 	&.no-pad { padding: 0; }
+
+	@include mediaquery(phone) {
+		&.no-mbl-pad { padding: 0; }
+		
+		.row { margin-bottom: 0; }
+	}
 }
 
 // Columns
@@ -32,10 +61,18 @@
 	
 	&.pad-left {
 		padding-left: $grid-padding !important;
+		
+		@include mediaquery(phone) {
+			padding-left: 0 !important;
+		}
 	}
 	
 	&.pad-right {
 		padding-right: $grid-padding !important;
+
+		@include mediaquery(phone) {
+			padding-right: 0 !important;
+		}
 	}
 }
 .col-1-8 {
@@ -68,3 +105,6 @@
 .col-4-5 {
 	width: 80%;
 }
+
+// For IE8-
+.lt-ie9 [class*='col-']:last-child { padding-right: 0 !important; }
