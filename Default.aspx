@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="author" href="/humans.txt">    <link rel="Stylesheet" href="/css/styles.v-1.0.css">
     <script src="/js/libs/modernizr-2.6.2.min.js"></script>
+    <!--[if (gte IE 6) & (lte IE 8)]><script src="/js/libs/selectivizr-min.js"></script><![endif]-->
 </head>
 <body>
     <!--[if lt IE 7]>
