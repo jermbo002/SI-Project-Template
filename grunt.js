@@ -36,6 +36,7 @@ module.exports = function( grunt ) {
         compass: {
             dev: {
                 src: 'css/sass',
+                debugsass: true,
                 dest: 'css',
                 outputstyle: 'expanded',
                 linecomments: true
